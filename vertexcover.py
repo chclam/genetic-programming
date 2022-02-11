@@ -13,7 +13,6 @@ def correct_adj_li(adj_li):
     adj_li[k] = sorted(list(set(adj_li[k])))
   
 if __name__ == "__main__":
-  k = 5
   verts = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
   adj_li = {
     0: [2, 3, 6],
@@ -30,8 +29,8 @@ if __name__ == "__main__":
 
   correct_adj_li(adj_li)
 
-  gen_vert = GeneticVC(verts, adj_li, k)
-  gen_vert.run(n=10, m=20)
-  fittest = gen_vert.get_fittest()
-  print(fittest)
+  gen_vert = GeneticVC(verts, adj_li, k=3)
+  gen_vert.run(n=100, m=200)
+  fittest, fitness_score = gen_vert.get_fittest()
+  print(fittest, fitness_score)
 
