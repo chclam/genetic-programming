@@ -1,5 +1,5 @@
 import random
-import numpy as np
+from numpy import argmax
 from tqdm import trange 
 
 class GeneticVC():
@@ -49,7 +49,7 @@ class GeneticVC():
     
   def get_fittest(self):
     fitness = self._get_fitness(self.pop)
-    i = np.argmax(fitness)
+    i = argmax(fitness)
     return self.pop[i], fitness[i]
 
   def _init_pop(self, pop_size):
