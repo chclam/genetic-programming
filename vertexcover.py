@@ -1,8 +1,9 @@
+#!/usr/bin/env python3
+
 from geneticvc import GeneticVC
 
 def correct_adj_li(adj_li):
   for k in adj_li.keys():
-
     adj_li[k] = [v for v in adj_li[k] if v != k]
 
     for v in adj_li[k]:
@@ -29,8 +30,8 @@ if __name__ == "__main__":
 
   correct_adj_li(adj_li)
 
-  gen_vert = GeneticVC(verts, adj_li, k=3)
-  gen_vert.run(n=100, m=200)
+  gen_vert = GeneticVC(verts, adj_li, k=4)
+  gen_vert.run(n=50, m=10)
   fittest, fitness_score = gen_vert.get_fittest()
   print(fittest, fitness_score)
 
