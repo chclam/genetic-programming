@@ -16,7 +16,6 @@ class GeneticVC():
   def run(self, n, m):
     pop = self._init_pop(m)
     fitness = self._get_fitness(pop)
-    gen = 0
     for r in (t := trange(n)):
       i = 0
       new_pop = []
@@ -26,7 +25,7 @@ class GeneticVC():
         if p <= 0.45:
           # reproduce
           new_pop.append(indiv)
-        elif 0.45 < p and p <= 0.5:
+        elif p > 0.45 and p <= 0.5:
           # mutate
           i = random.randint(0, len(indiv)-1)
           diff = list(set(self.verts) - set(indiv))
