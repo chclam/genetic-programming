@@ -25,7 +25,7 @@ class GeneticVC():
         if p <= 0.45:
           # reproduce
           new_pop.append(indiv)
-        elif p > 0.45 and p <= 0.5:
+        elif p <= 0.5:
           # mutate
           i = random.randint(0, len(indiv)-1)
           diff = list(set(self.verts) - set(indiv))
